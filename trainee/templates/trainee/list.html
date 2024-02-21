@@ -1,0 +1,28 @@
+{%extends 'parent.html'%}
+{%block title%}
+    Trainee -List
+{%endblock%}
+{%block content%}
+{{data}}
+<a href="{%url 'Traineeadd'%}">Add trainee</a>
+    <table border="1" width="100%">
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>age</td>
+            <td>Actions</td>
+        </tr>
+        {%for trainee in data%}
+             <tr>
+                <td>{{trainee.id}}</td>
+                <td>{{trainee.name}}</td>
+                <td>{{trainee.age}}</td>
+                <td>
+                    <a href="{%url 'traineeshow' trainee.id%}">Show</a>
+                    <a href="{%url 'Traineeupdate' trainee.id%}">Update</a>
+                    <a href="{%url 'Traineedelete' trainee.id%}">Delete</a>
+                </td>
+            </tr>
+        {%endfor%}
+    </table>
+{%endblock%}

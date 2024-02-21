@@ -1,0 +1,47 @@
+{%load static%}
+<title>
+    {%block title%}
+    Parent
+    {%endblock%}
+</title>
+<link type="text/css" rel="stylesheet" href="{%static 'css/style.css'%}"/>
+<link type="text/css" rel="stylesheet" href="{%static 'css/bootstrap.min.css'%}"/>
+<table border="1" width="100%">
+    <tr>
+        <td colspan="7">
+            <h1>Header</h1>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="7">
+           {%block test%}
+            {%endblock%}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1">
+            <h1>Menu</h1>
+            <a href="{%url 'Tracks'%}">Tracks</a>
+            </br>
+            <a href="">New Track</a></br>
+            <a href="">Trainees</a></br>
+            <a href="">New Trainee</a></br>
+        </td>
+        <td colspan="6">
+            {%block content%}
+                 Parent content
+            {%endblock%}
+        </td>
+    </tr>
+    <tr>
+        <td colspan="7">
+            <h1>Footer</h1>
+        </td>
+    </tr>
+</table>
+
+<title>LIst</title>
+{%block javascript%}
+<!--<img src="{%static 'imges/main.png'%}"-->
+{%endblock%}
+<script src="{%static 'js/bootstrap.js'%}"/>

@@ -1,0 +1,18 @@
+{%extends 'parent.html'%}
+{%block title%}
+    Trainee -List
+{%endblock%}
+{%block content%}
+  <form method="post">
+      {%csrf_token%}
+        <label>Name:</label>
+      <input type="text" name="tname" value="{{trainee.name}}" required></br>
+
+        <label>Email:</label>
+      <input type="text" name="temail" required  value="{{trainee.email}}"></br>
+
+        <label>Image:</label>
+      <input type="file" name="timg" required></br>
+      <input type="submit" value="Update">
+  </form>
+{%endblock%}
