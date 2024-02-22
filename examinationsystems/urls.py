@@ -19,6 +19,8 @@ from django.urls import path,include
 from track.views import  *
 from track.views import *
 from trainee.views import *
+from .settings import *
+from django.conf.urls.static import static
 urlpatterns = [
     #view--->route
     path('admin/', admin.site.urls),
@@ -26,12 +28,12 @@ urlpatterns = [
     path('',hello),
     path('Tracks/',include('track.urls')),
     path('Trainees/',include('trainee.urls')),
-    # path('Trainee/',include('trainee.urls')),
+
+]+static(MEDIA_URL,document_root=MEDIA_ROOT)
+# path('Trainee/',include('trainee.urls')),
     # path('Tracks/',tracks),
     # path('Tracks/<int:id>/',gettrackbyid),#wait data
     # path('Tracks/<str:name>/',gettrackbyname),#wait data
-
-]
 #slud-->ascii,letter,_,number
 #uuid---->uuid
 #r-path()--->12.3
