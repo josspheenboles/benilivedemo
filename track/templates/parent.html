@@ -9,7 +9,20 @@
 <table border="1" width="100%">
     <tr>
         <td colspan="7">
+
             <h1>Header</h1>
+           {%if user.id %}
+
+            <h1>{{request.sessions.beni}}</h1>
+            <h1>welcome {{user}}</h1>
+            <form method="post" action="{%url 'logout'%}">
+                {%csrf_token%}
+                <input type="submit" value="Logout">
+            </form>
+            {%else%}
+                <a href="{%url 'login'%}">Login</a>
+                <a href="{%url 'login'%}">register</a>
+            {%endif%}
         </td>
     </tr>
     <tr>

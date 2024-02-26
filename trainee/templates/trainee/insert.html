@@ -5,7 +5,14 @@
 {%block content%}
   <form method="post" enctype="multipart/form-data">
       {%csrf_token%}
-        <label>Name:</label>
+        <label>Track:</label>
+      <select name="trackid">
+          {%for track in tracks%}
+            <option value="{{track.id}}">{{track.name}}</option>
+          {%endfor%}
+
+      </select>
+      <label>Name:</label>
       <input type="text" name="tname" required></br>
 
         <label>Email:</label>

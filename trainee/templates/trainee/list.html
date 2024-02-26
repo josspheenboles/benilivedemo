@@ -4,9 +4,12 @@
     Trainee -List
 {%endblock%}
 {%block content%}
-{{data}}
+<!--{{data}}-->
+
 <a href="{%url 'Traineeadd'%}">Add trainee</a>
 <a href="{%url 'Traineeaddusingform'%}">Add trainee using form</a>
+</br>
+<a href="{%url 'Traineeaddusingformmodel'%}">Add trainee using form model</a>
     <table border="1" width="100%">
         <tr>
             <td>ID</td>
